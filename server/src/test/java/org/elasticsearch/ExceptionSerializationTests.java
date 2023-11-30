@@ -62,6 +62,7 @@ import org.elasticsearch.index.shard.ShardId;
 import org.elasticsearch.index.shard.ShardNotInPrimaryModeException;
 import org.elasticsearch.indices.IndexTemplateMissingException;
 import org.elasticsearch.indices.InvalidIndexTemplateException;
+import org.elasticsearch.indices.MissedIndicesUpdateException;
 import org.elasticsearch.indices.recovery.PeerRecoveryNotFound;
 import org.elasticsearch.indices.recovery.RecoverFilesRecoveryException;
 import org.elasticsearch.indices.recovery.RecoveryCommitTooNewException;
@@ -838,6 +839,7 @@ public class ExceptionSerializationTests extends ESTestCase {
         ids.put(172, RecoveryCommitTooNewException.class);
         ids.put(173, TooManyScrollContextsException.class);
         ids.put(174, AggregationExecutionException.InvalidPath.class);
+        ids.put(175, MissedIndicesUpdateException.class);
 
         Map<Class<? extends ElasticsearchException>, Integer> reverse = new HashMap<>();
         for (Map.Entry<Integer, Class<? extends ElasticsearchException>> entry : ids.entrySet()) {
